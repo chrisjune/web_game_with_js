@@ -1,3 +1,4 @@
+// Make 45 Numbers
 var num_list = Array(45)
   .fill()
   .map(function(ele, index) {
@@ -5,7 +6,7 @@ var num_list = Array(45)
   });
 console.log(num_list);
 
-// Math.random
+// Make Random Number
 var shuffle = [];
 var i = 0;
 while (num_list.length > 0) {
@@ -22,12 +23,7 @@ var bonus_number = shuffle.slice(shuffle.length - 1);
 console.log(lotto_number);
 console.log(bonus_number);
 
-function create_and_append_div(object, text) {
-  var div = document.createElement("div");
-  div.textContent = text;
-  object.appendChild(div);
-}
-
+// Make lotto 1 ball
 var make_ball = function(text){
       var ball = document.createElement('div');
       ball.textContent = text;
@@ -52,6 +48,7 @@ var get_bg_color = function(text){
     if (number<=50) return 'green';
 }
 
+// Run lotto
 var lotto_div = document.getElementById("result");
 lotto_number.forEach(function(number, index) {
   function run(i) {
