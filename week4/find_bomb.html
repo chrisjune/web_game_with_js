@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>지뢰찾기</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            font-size: 5px;
+            padding: 0 0;
+            border-spacing: 0;
+        }
+        td{
+            border:1px solid black;
+            width:14px;
+            height:14px;
+            padding: 0 0;
+            text-align: center;
+            background:url("classic.png") -1px -304px;
+        }
+        td.opened{
+            background:url("classic.png");
+        }
+        td.blank{
+            background:url("classic.png") -1px -304px;
+        }
+        td.flag{
+            background:url("classic.png") -174px -304px;
+        }
+        td.question{
+            background:url("classic.png") -191px -304px;
+        }
+        td.bomb{
+            background:url("classic.png") -103px -304px;
+        }
+        td.zero{
+            background:url("classic.png") -18px -304px;
+        }
+        td.one{
+            background:url("classic.png") -1px -404px;
+        }
+        td.two{
+            background:url("classic.png") -17px -404px;
+        }
+        td.three{
+            background:url("classic.png") -34px -404px;
+        }
+        td.four{
+            background:url("classic.png") -52px -404px;
+        }
+        td.five{
+            background:url("classic.png") -69px -404px;
+        }
+        td.six{
+            background:url("classic.png") -85px -404px;
+        }
+        td.seven{
+            background:url("classic.png") -102px -404px;
+        }
+        td.eight{
+            background:url("classic.png") -119px -404px;
+        }
+        
+    </style>
+</head>
+<body>
+    <input type='text' id='row' placeholder='가로' value=10>
+    <input type='text' id='col' placeholder='세로' value=10>
+    <input type='text' id='bomb' placeholder='지뢰' value=10>
+    <button id='exec'>실행</button>  
+    <table id='table' border=1>
+        <thead></thead>
+        <tbody></tbody>
+    </table>
+    <script src='find_bomb.js'></script>
+</body>
+</html>
