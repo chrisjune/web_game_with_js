@@ -8,8 +8,8 @@ var cols = null
 var bombs = null
 
 // 판 만들기
-var par_td;
-var par_tr;
+var clicked_td;
+var clicked_tr;
 var board = [];
 
 // 게임종료체크
@@ -41,10 +41,10 @@ exec.addEventListener('click', function (event) {
 
 function right_click_event(event) {
     event.preventDefault();
-    par_td = event.currentTarget;
-    par_tr = event.currentTarget.parentNode; // tr
-    console.log(par_tr.rowIndex, par_td.cellIndex);
-    change_cell(par_tr.rowIndex, par_td.cellIndex);
+    clicked_td = event.currentTarget;
+    clicked_tr = event.currentTarget.parentNode; // tr
+    console.log(clicked_tr.rowIndex, clicked_td.cellIndex);
+    change_cell(clicked_tr.rowIndex, clicked_td.cellIndex);
 }
 
 
@@ -85,9 +85,6 @@ function shuffle(arr) {
 
 function change_cell(row, col) {
     var cell = get_cell(row, col);
-    if (cell.className === 'opened'){
-        return;
-    }
     var origin = cell.textContent;
 
     function which_cell() {
@@ -118,22 +115,22 @@ function change_cell(row, col) {
 
 function click_event(event) {
     event.preventDefault();
-    par_td = event.currentTarget;
-    par_tr = event.currentTarget.parentNode; // tr
-    var row = par_tr.rowIndex;
-    var col = par_td.cellIndex;
+    clicked_td = event.currentTarget;
+    clicked_tr = event.currentTarget.parentNode; // tr
+    var row = clicked_tr.rowIndex;
+    var col = clicked_td.cellIndex;
     console.log(row, col);
 
-    if (par_td.className !== ''){
+    if (clicked_td.className !== ''){
         return;
     }
-    // par_td.classList.add('opened');
+    // clicked_td.classList.add('opened');
     var bomb = calculate_bomb(row, col);
     if (bomb==='펑'){
         mark_fail();
         return;
     }
-    par_td.classList.add(set_number_cell(bomb));
+    clicked_td.classList.add(set_number_cell(bomb));
  
 
     if (bomb == 0){
