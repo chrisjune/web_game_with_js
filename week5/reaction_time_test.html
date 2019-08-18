@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Reaction Time</title>
+    <style>
+        #screen{
+            width:500px;
+            height:300px;
+            user-select: none;
+            text-align:center;
+        }
+        #screen.waiting{
+            background-color:aqua;
+        }
+        #screen.not_ready{
+            background-color:red;
+            color:white;
+        }
+        #screen.ready{
+            background-color:gold;
+        }
+        #screen.now{
+            background-color:greenyellow;
+        }
+    </style>
+</head>
+<body>
+   <div id="screen" class="waiting">클릭해서 시작하세요</div> 
+   <script src="reaction_time_test.js"></script>
+</body>
+</html>
