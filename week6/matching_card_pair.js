@@ -1,18 +1,5 @@
 card_count = 12;
-color_list = [
-  "red",
-  "red",
-  "orange",
-  "orange",
-  "white",
-  "white",
-  "black",
-  "black",
-  "green",
-  "green",
-  "skyblue",
-  "skyblue"
-];
+color_list = [ "#FFFFFF", "#FFFFFF", "orange", "orange", "white", "white", "black", "black", "green", "green", "skyblue", "skyblue" ];
 card_list = [];
 open_queue = [];
 wrapper = document.querySelector(".wrapper");
@@ -58,8 +45,10 @@ function event() {
         if (open_queue.length == 1 && is_same_card([open_queue[0], c])) {
           return;
         }
+        if (card_list.indexOf(c)<0){
+          return;
+        }
         open_queue.push(c);
-
         c.classList.toggle("flipped");
 
         if (open_queue.length <= 1) {
@@ -139,8 +128,12 @@ function is_same_card(cards) {
 }
 
 function open_cards(cards) {
-  cards.forEach(function(card) {
+  for (var i=0;i<cards.length;i++){
+    card=cards[i];
     index = card_list.indexOf(card);
-    card_list.pop(index);
-  });
+    if (index < 0){
+    	continue;
+    }
+    card_list.splice(index,1);
+  }
 }
