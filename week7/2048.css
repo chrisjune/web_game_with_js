@@ -1,0 +1,49 @@
+#table {
+  border-collapse: collapse;
+}
+
+#table td {
+  border: 1px solid gray;
+  width: 197px;
+  height: 197px;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  padding: 0, 0;
+}
+.num2 {
+  background: url("tiles.png");
+}
+.num4 {
+  background: url("tiles.png") -200px 0px;
+}
+.num8 {
+  background: url("tiles.png") -400px 0px;
+}
+.num16 {
+  background: url("tiles.png") -600px 0px;
+}
+.num32 {
+  background: url("tiles.png") 0px -200px;
+}
+.num64 {
+  background: url("tiles.png") -200px -200px;
+}
+.num128 {
+  background: url("tiles.png") -400px -200px;
+}
+.num256 {
+  background: url("tiles.png") -600px -200px;
+}
+.num512 {
+  background: url("tiles.png") 0px -400px;
+}
+.num1024 {
+  background: url("tiles.png") -200px -400px;
+}
+.num2048 {
+  background: url("tiles.png") -400px -400px;
+}
+.num4096 {
+  background: url("tiles.png") -600px -400px;
+}
